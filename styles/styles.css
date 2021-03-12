@@ -1,0 +1,22 @@
+.cont  {
+    dispay: inline-block;
+    font-size: 23px;
+    background: #e4e4f3;
+    width: 50%;
+    margin: 40px auto;
+    padding: 20px;
+    font-family: "Arial";
+    border-radius: 19px;
+}
+.cont a {
+    display: block;
+    margin: 10px 10px 10px 40px;
+    text-decoration: none;
+    color: black;
+    transition: color 700ms, text-shadow 700ms;
+}
+.cont a:hover {
+    color: #fff;
+    text-shadow: black -2px 0 4px, black 2px 0 4px, black 0px -2px 4px, black 0px 2px 4px;
+    transition: color 700ms, text-shadow 700ms;
+}
