@@ -3,31 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <title>задание 1.2</title>
-    <link href="../styles/1.1.css" rel="stylesheet">
-    <script src="../scripts/1.2.js" defer></script>
+    <link href="../styles/1.3.css" rel="stylesheet">
+    <script src="../scripts/1.3.js" defer></script>
 </head>
 <body>
 <div class="elem">
-    <input type="text" name="num" size="10" placeholder="Введите число">
-    <input type="text" name="word" size="9" placeholder=""><br>
-    <pre>
-    elem[0],  elem[1]
-
-
-    let elem = document.getElementsByTagName("input");
-
-    elem[0].oninput = function () {
-    if (elem[0].value < 0) {
-        elem[1].value = "Менше нуля";
-      } else if (elem[0].value == 0) {
-          elem[1].value = "Число ноль";
-      } else if (elem[0].value > 0) {
-          elem[1].value = "Больше нуля";
-      } else elem[1].value = "Это не число";
-    }
-
-
-    </pre>
+    <input id="inp" type="text" name="num" size="19" placeholder="Введите число">
+    <select id="sel">
+        <option VALUE="0">bit</option>
+        <option VALUE="1">byte</option>
+        <option VALUE="2">Kb</option>
+        <option VALUE="3">Mb</option>
+        <option VALUE="4">Gb</option>
+        <option VALUE="5">Tb</option>
+    </select><br>
 </div>
 
 </body>
