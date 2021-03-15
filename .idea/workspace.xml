@@ -19,7 +19,11 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1pedPotmCEQ8U48e4lnnwTjd0v6" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -58,10 +62,17 @@
       <workItem from="1615547633693" duration="5855000" />
       <workItem from="1615554041231" duration="11839000" />
       <workItem from="1615574644260" duration="61000" />
+      <workItem from="1615802092259" duration="84000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="739" y="266" key="FileChooserDialogImpl" timestamp="1615802165330">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="739" y="266" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1615802165330" />
   </component>
 </project>
