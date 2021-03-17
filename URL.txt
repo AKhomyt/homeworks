@@ -1,1 +1,2 @@
 git@github.com:AKhomyt/homeworks.git
+https://github.com/AKhomyt/homeworks
