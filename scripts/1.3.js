@@ -2,29 +2,39 @@ let elem = document.getElementById("inp");
 let elem2 = document.getElementById("sel");
 let val, previosInd;
 
-elem.oninput = function(){
+
+function convertor(num, ind, Pind) {
+    /*
+        indices:
+        0 - bit
+        1 - byte
+        2 - Kb
+        3 - Mb
+        4 - Gb
+        5 - Tb
+    */
+    if (ind < Pind && Pind != 0 && ind != 0) {
+        return num * Math.pow(1024, (Pind - ind));
+    } else if (ind > Pind && Pind != 0 && ind != 0) {
+        return num / Math.pow(1024, (ind - Pind));
+    } else if (ind < Pind && Pind != 0 && ind == 0) {
+        return num * 8 * Math.pow(1024, (Pind - ind - 1));
+    } else if (ind > Pind && Pind == 0 && ind != 0) {
+        return num / (8 * Math.pow(1024, (ind - Pind - 1)));
+    }
+}
+
+elem.oninput = function () {
     val = elem.value;
     previosInd = elem2.options.selectedIndex;
 }
 
 elem2.onchange = function () {
-    let selInd = elem2.options.selectedIndex;
+    
+    let selectInd = elem2.options.selectedIndex;
 
+    elem.value = convertor(val, selectInd, previosInd);
 
-    if(selInd < previosInd && previosInd != 0 && selInd != 0){
-        val = val*Math.pow(1024,(previosInd - selInd));
-        elem.value = val;
-    } else if(selInd > previosInd && previosInd != 0 && selInd != 0){
-        val = val/Math.pow(1024,(selInd-previosInd));
-        elem.value = val;
-    }else if(selInd < previosInd && previosInd != 0 && selInd == 0){
-        val = val* 8 * Math.pow(1024,(previosInd - selInd - 1));
-        elem.value = val;
-    } else if(selInd > previosInd && previosInd == 0 && selInd != 0){
-        val = val/ (8 * Math.pow(1024,(selInd - previosInd - 1)));
-        elem.value = val;
-    }
-    previosInd = selInd;
-
-
+    val = elem.value;
+    previosInd = selectInd;
 }
