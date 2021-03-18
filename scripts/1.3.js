@@ -1,9 +1,18 @@
+/*
+1.3 Переменная хранит в себе единицу измерения одно из возможных
+значений (Byte, KB, MB, GB), Вторая переменная хранит в себе целое число.В зависимости от
+того какая единица измерения написать скрипт, который выводит
+количество байт. Для вычисления принимает счет что в каждой последующей
+единицы измерения хранится 1024 единиц более меньшего измерения.
+*/
+
+
 let elem = document.getElementById("inp");
 let elem2 = document.getElementById("sel");
 let val, previosInd;
 
 
-function convertor(num, ind, Pind) {
+function byteConverter(num, ind, Pind) {
     /*
         indices:
         0 - bit
@@ -33,7 +42,7 @@ elem2.onchange = function () {
     
     let selectInd = elem2.options.selectedIndex;
 
-    elem.value = convertor(val, selectInd, previosInd);
+    elem.value = byteConverter(val, selectInd, previosInd);
 
     val = elem.value;
     previosInd = selectInd;

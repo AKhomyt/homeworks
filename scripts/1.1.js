@@ -1,8 +1,16 @@
+/*
+1.1 Переменная хранит в себе значение от 0 до 9. Написать скрипт который
+будет выводить слово “один”, если переменная хранит значение 1.
+Выводить слово “два” - если переменная хранит значение
+2, и т.д. для всех цифр от 0 до 9. Реализовать двумя способами.
+*/
+
+
+
 let elem = document.getElementsByTagName("input");
 
-
 //способ первый
-function convertOne(num) {
+function convectorNumbersInWordsOne(num) {
     if (num == 0) {
         return "НОЛЬ";
     } else if (num == 1) {
@@ -26,7 +34,7 @@ function convertOne(num) {
     } else return "Это не цифра!";
 }
 //способ второй
-function convertTwo(num) {
+function convectorNumbersInWordsTwo(num) {
     let numbers = ["НОЛЬ", "ОДИН", "ДВА", "ТРИ", "ЧЕТЫРЕ", "ПЯТЬ", "ШЕСТЬ", "СЕМЬ", "ВОСЕМЬ", "ДЕВЯТЬ"];
     if (num >= 0 && num <= 9) {
         return numbers[num];
@@ -38,10 +46,10 @@ function convertTwo(num) {
 
 
 elem[0].oninput = function(){
-    elem[1].value = convertOne(this.value);
+    elem[1].value = convectorNumbersInWordsOne(this.value);
 }
 
 
 elem[2].oninput = function () {
-    elem[3].value = convertTwo(this.value);
+    elem[3].value = convectorNumbersInWordsTwo(this.value);
 }
