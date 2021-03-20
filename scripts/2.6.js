@@ -10,7 +10,7 @@ let ex = document.getElementById("ex"); //exit
 function integerDivisors(num) {
     let tempArr = []
     for (let i = 0; i <= num; i++) {
-        if (num/i % 1 == 0) {
+        if (num / i % 1 == 0) {
             tempArr.push(i);
         }
     }
@@ -40,23 +40,22 @@ function commonMeanings(arr1, arr2) {
     return tempArr; //Возвращает массив с общими элементами исключая их повторение
 }
 
-function greatestNumber(arr){
+function greatestNumber(arr) {
     let temp = 0;
     temp = arr[0];
-    for (let i =0; i < arr.length; i++){
-        if (temp*1<arr[i]) {
+    for (let i = 0; i < arr.length; i++) {
+        if (temp * 1 < arr[i]) {
             temp = arr[i];
         }
         console.log(i);
-    } return temp;//Наибольшое в массиве
+    }
+    return temp;//Наибольшое в массиве
 }
 
-function mainFunc(numb1, numb2){
+function mainFunc(numb1, numb2) {
     let tempArr = commonMeanings(integerDivisors(numb1), integerDivisors(numb2));
     return greatestNumber(tempArr);
 }
-
-
 
 
 ent.oninput = function () {

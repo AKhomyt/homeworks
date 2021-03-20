@@ -1,19 +1,23 @@
 //2.5 Найти минимальное число которое больше 300 и нацело делиться на 17
 
+let entA = document.getElementById("entA"),
+    entB = document.getElementById("entB"),
+    ex = document.getElementById("ex"),
+    count = document.getElementById("count");
 
-let ex = document.getElementById("ex");
-
-function numberFromTask() {
-    for (let i = 301;; i++){
-        if ((i/17)%1 == 0){
+function numberFromTask(numbOne, numbTwo) {
+    numbOne *= 1;
+    numbTwo *= 1;
+    for (let i = numbOne + 1; !isNaN(numbOne) && !isNaN(numbTwo); i++) {
+        if ((i / numbTwo) % 1 == 0 ) {
             return i;
-        }
+        }console.log(i);
     }
 }
 
-(function () {
-    ex.innerHTML = numberFromTask();
-})()
+count.onclick = function () {
+    ex.value = numberFromTask(entA.value, entB.value);
+}
 
 
 

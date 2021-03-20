@@ -20,27 +20,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2130abe5-05c2-472c-b18f-39cb884c0fda" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/html/2.1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/2.2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/2.3.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/2.4.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/2.5.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/2.6.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/2.1.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/2.2.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/2.3.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/2.4.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/2.5.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/2.6.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/styles/2.4.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/styles/2.5.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/2.1.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/2.1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/2.2.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/2.2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/2.3.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/2.3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/2.4.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/2.4.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/2.5.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/2.5.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/2.6.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/2.6.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/1.1.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/1.1.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/1.2.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/1.2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/1.3.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/1.3.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/1.4.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/1.4.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/2.1.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/2.1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/2.2.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/2.2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/2.3.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/2.3.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/2.4.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/2.4.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/2.5.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/2.5.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/2.6.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/2.6.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,6 +110,10 @@
       <workItem from="1616016398092" duration="3874000" />
       <workItem from="1616060714752" duration="3121000" />
       <workItem from="1616072498844" duration="16514000" />
+      <workItem from="1616132698497" duration="1331000" />
+      <workItem from="1616171041524" duration="2194000" />
+      <workItem from="1616181327282" duration="8667000" />
+      <workItem from="1616222139489" duration="2480000" />
     </task>
     <servers />
   </component>
@@ -148,5 +145,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="245" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1615984462539" />
+    <state x="536" y="272" width="672" height="678" key="search.everywhere.popup" timestamp="1616191669225">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="536" y="272" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1616191669225" />
   </component>
 </project>

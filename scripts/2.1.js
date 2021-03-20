@@ -16,6 +16,3 @@ ent.oninput = function () {
     ex.value = invertString(this.value);
 }
 
-
-
-
