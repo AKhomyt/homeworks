@@ -20,20 +20,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2130abe5-05c2-472c-b18f-39cb884c0fda" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/html/3.2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html/3.3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html/3.4.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html/3.5.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html/3.6.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html/createMatrix.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/3.2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/3.3.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/3.4.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/3.5.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/3.6.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/createMatrix.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/styles/3.4.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/styles/3.5.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/2.1.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/2.1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/2.2.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/2.2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/2.3.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/2.3.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/2.4.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/2.4.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/2.5.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/2.5.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/2.6.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/2.6.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/2.1.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/2.1.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/2.2.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/2.2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/2.3.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/2.3.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/2.4.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/2.4.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/2.5.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/2.5.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/2.6.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/2.6.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +68,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/scripts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/styles" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -77,9 +79,9 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\РАЗНОЕ\MyPojects\homework\styles" />
       <recent name="D:\РАЗНОЕ\MyPojects\homework\scripts" />
       <recent name="D:\РАЗНОЕ\MyPojects\homework\html" />
-      <recent name="D:\РАЗНОЕ\MyPojects\homework\styles" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -114,6 +116,20 @@
       <workItem from="1616171041524" duration="2194000" />
       <workItem from="1616181327282" duration="8667000" />
       <workItem from="1616222139489" duration="2480000" />
+      <workItem from="1616224684327" duration="114000" />
+      <workItem from="1616432457300" duration="6876000" />
+      <workItem from="1616485181273" duration="33156000" />
+      <workItem from="1616519126234" duration="43000" />
+      <workItem from="1616519220894" duration="64000" />
+      <workItem from="1616519476782" duration="104000" />
+      <workItem from="1616519718686" duration="65000" />
+      <workItem from="1616580920398" duration="7681000" />
+      <workItem from="1616588928904" duration="13631000" />
+      <workItem from="1616602733390" duration="5867000" />
+      <workItem from="1616670079589" duration="721000" />
+      <workItem from="1616683123207" duration="4450000" />
+      <workItem from="1616688011126" duration="13441000" />
+      <workItem from="1616760320018" duration="14549000" />
     </task>
     <servers />
   </component>
