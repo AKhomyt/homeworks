@@ -33,15 +33,14 @@ submit.onclick = function () {
 //  function createMatrix в отдельном скрипте
 
 function matSum(arrMatr, ex) {
-    //let tableTextHTML = '<table>';
     let arrEx = createMatrix(arrMatr.length, arrMatr[0].length, ex, 'id2');
 
     for (let i = 0; i < arrMatr[0].length; i++) {
         let col = [], nullEllem = true;
-        col[i] = 0; //tableTextHTML += '<tr>';
+        col[i] = 0;
 
         for (let j = 0; j < arrMatr.length; j++) {
-            col[i] += arrMatr[j][i].value * 1;
+            col[i] += Number(arrMatr[j][i].value);
             if (arrMatr[j][i].value == 0) {
                 nullEllem = false;
                 break;
@@ -49,21 +48,15 @@ function matSum(arrMatr, ex) {
         }
         if (col[i] > 0 && nullEllem) {
             for (let j = 0; j < arrMatr.length; j++) {
-                //arrMatr[j][i].value = 'X';
-               // tableTextHTML += '<td>X</td>';
                 arrEx[j][i].disabled = true;
                 arrEx[j][i].value = 'X';
             }
         } else {
             for (let j = 0; j < arrMatr.length; j++) {
-                //arrMatr[j][i].value = 'X ';
-                //tableTextHTML += '<td>' + arrMatr[j][i].value + '</td>';
                 arrEx[j][i].disabled = true;
                 arrEx[j][i].value = arrMatr[j][i].value;
             }
         }
-        //tableTextHTML += '</tr>';
-        nullEllem = true
+        nullEllem = true;
     }
-    //tableTextHTML += '</table>';
 }

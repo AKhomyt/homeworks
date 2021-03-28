@@ -58,10 +58,10 @@ function matrixMultiplication(arrM1, arrM2, ex) {
     }
     let temp = 0, text = '';
     for (let i = 0; i < arrM1.length; i++) {
-        for (let j = 0; j < arrM2[0].length; j++) {
+        for (let j = 0; j < arrM2[i].length; j++) {
             temp = 0;
-            for (let e = 0; e < arrM1[0].length; e++) {
-                temp += arrM1[i][e].value * 1 * arrM2[e][j].value * 1;
+            for (let e = 0; e < arrM1[i].length; e++) {
+                temp += arrM1[i][e].value * arrM2[e][j].value;
             }
             arrMulti[i][j].value = temp;
             temp++;
@@ -69,5 +69,4 @@ function matrixMultiplication(arrM1, arrM2, ex) {
         }
         text += '\n';
     }
-    console.log(text + '\n i:' + arrMulti.length + ', j:' + arrMulti[0].length);
 }

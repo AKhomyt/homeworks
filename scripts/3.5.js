@@ -42,14 +42,14 @@ function matSum(arrMatr, ex) {
 
     for (let i = 0; i < arrMatr.length; i++) {
         row[i] = 0;
-        for (let j = 0; j < arrMatr[0].length; j++) {
-            row[i] += arrMatr[i][j].value * 1;
+        for (let j = 0; j < arrMatr[i].length; j++) {
+            row[i] += Number(arrMatr[i][j].value);
         }
     }
     for (let i = 0; i < arrMatr[0].length; i++) {
         col[i] = 0;
         for (let j = 0; j < arrMatr.length; j++) {
-            col[i] += arrMatr[j][i].value * 1;
+            col[i] += Number(arrMatr[j][i].value);
         }
     }
     ex.innerHTML = 'Максимальная сумма элементов: ' + maxIndex(row) + ' Строка, ' + maxIndex(col) + ' Столбец';
