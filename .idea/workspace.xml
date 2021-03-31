@@ -20,13 +20,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2130abe5-05c2-472c-b18f-39cb884c0fda" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/html/4.1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html/4.2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html/4.4.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/4.1.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/4.2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/4.4.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/styles/4.1.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/3.5.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/3.5.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/3.6.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/3.6.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/3.4.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/3.4.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/3.5.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/3.5.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/3.6.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/3.6.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/createMatrix.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/createMatrix.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +62,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/styles" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/scripts" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -70,9 +73,9 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\РАЗНОЕ\MyPojects\homework\styles" />
       <recent name="D:\РАЗНОЕ\MyPojects\homework\scripts" />
       <recent name="D:\РАЗНОЕ\MyPojects\homework\html" />
+      <recent name="D:\РАЗНОЕ\MyPojects\homework\styles" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -125,6 +128,17 @@
       <workItem from="1616862922604" duration="1086000" />
       <workItem from="1616874720883" duration="1212000" />
       <workItem from="1616940343317" duration="8722000" />
+      <workItem from="1616949184880" duration="91000" />
+      <workItem from="1617036340394" duration="7687000" />
+      <workItem from="1617104131888" duration="22035000" />
+      <workItem from="1617183958560" duration="42000" />
+      <workItem from="1617184016172" duration="65000" />
+      <workItem from="1617184163862" duration="3000" />
+      <workItem from="1617184276399" duration="66000" />
+      <workItem from="1617185121599" duration="179000" />
+      <workItem from="1617185311856" duration="8000" />
+      <workItem from="1617185361110" duration="318000" />
+      <workItem from="1617186244727" duration="11413000" />
     </task>
     <servers />
   </component>
@@ -148,6 +162,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="736" y="326" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1616080299225" />
+    <state x="603" y="294" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1617108030046">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="603" y="294" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1617108030046" />
     <state x="739" y="266" key="FileChooserDialogImpl" timestamp="1615802165330">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -156,9 +174,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="245" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1616940846510" />
-    <state x="536" y="272" width="672" height="678" key="search.everywhere.popup" timestamp="1616191669225">
+    <state x="536" y="272" width="672" height="678" key="search.everywhere.popup" timestamp="1617123535010">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="536" y="272" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1616191669225" />
+    <state x="536" y="272" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1617123535010" />
   </component>
 </project>
