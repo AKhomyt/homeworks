@@ -57,10 +57,10 @@ function matrixMultiplication(arrM1, arrM2, ex) {
         return;
     }
     let temp = 0, text = '';
-    for (let i = 0; i < arrM1.length; i++) {
-        for (let j = 0; j < arrM2[i].length; j++) {
+    for (let i in arrM1) {
+        for (let j in arrM2[i]) {
             temp = 0;
-            for (let e = 0; e < arrM1[i].length; e++) {
+            for (let e in arrM1[i]) {
                 temp += arrM1[i][e].value * arrM2[e][j].value;
             }
             arrMulti[i][j].value = temp;

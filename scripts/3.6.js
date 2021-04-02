@@ -35,11 +35,11 @@ submit.onclick = function () {
 function matSum(arrMatr, ex) {
     let arrEx = createMatrix(arrMatr.length, arrMatr[0].length, ex, 'id2');
 
-    for (let i = 0; i < arrMatr[0].length; i++) {
+    for (let i in arrMatr[0]) {
         let col = [], nullEllem = true;
         col[i] = 0;
 
-        for (let j = 0; j < arrMatr.length; j++) {
+        for (let j in arrMatr) {
             col[i] += Number(arrMatr[j][i].value);
             if (arrMatr[j][i].value == 0) {
                 nullEllem = false;

@@ -6,7 +6,7 @@ let ex = document.getElementById("ex");
 function invertString(string) {
     let arr = string.split("");
     string = "";
-    for (let i = 0; i < arr.length; i++) {
+    for (let i in arr) {
         string += arr[arr.length - i - 1];
     }
     return string;

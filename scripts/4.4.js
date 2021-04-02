@@ -10,9 +10,11 @@ let text = document.getElementById('text'),
 //---------------------------------------------------------------------------------------------------------
 function exitText(arrayWords, arrayStatistics, lengthText) {
     let tempText = '';
-    for (let i = 0; i < arrayWords.length; i++) {
-        if (arrayStatistics[i] != 1){
-            tempText += '<br><br>' + arrayWords[i] + '<br>(' + Math.round((arrayStatistics[i] * 100) * 10000 / lengthText) / 10000 + '%, ' + arrayStatistics[i] + ' в тексте);<br><br>';
+    for (let i in arrayWords) {
+        if (arrayStatistics[i] != 1) {
+            tempText += '<br><br>' + arrayWords[i] +
+                '<br>(' + Math.round((arrayStatistics[i] * 100) * 10000 / lengthText) / 10000 +
+                '%, ' + arrayStatistics[i] + ' в тексте);<br><br>';
         } else {
             tempText += arrayWords[i] + ' ( УНИКАЛЬНОЕ );<br>';
         }
@@ -28,7 +30,7 @@ function textStatistics(text) {
     for (let index = 0; index < textArray.length; index++) {
         current[index] = 1;
         for (let i = index + 1; i < textArray.length; i++) {
-            if (textArray[textArray.length - 1] == ''){
+            if (textArray[textArray.length - 1] == '') {
                 textArray.splice(textArray.length - 1, 1);
                 lengthText--;
             }

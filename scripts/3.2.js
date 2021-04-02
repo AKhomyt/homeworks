@@ -16,7 +16,7 @@ function invertStringRec(arrString, tempArr) {
 }
 function arrayToString(arr) {
     let str = '';
-    for (let i = 0; i < arr.length; i++) {
+    for (let i in arr) {
         if (arr[i] != ',') {
             str += arr[i];
         }

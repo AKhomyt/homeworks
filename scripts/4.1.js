@@ -11,6 +11,7 @@ let val_1 = document.getElementById('val_1'),
     val_2 = document.getElementById('val_2'),
     size = document.getElementById('size'),
     ex = document.getElementById('ex');
+
 //---------------------------------------------------------------------------------------------------------
 
 function createArray(from, to) {
@@ -38,7 +39,6 @@ function creatRandomArray(from, to, size) {
     }
     return exitArray;
 }
-
 
 val_1.oninput = function () {
     ex.innerHTML = creatRandomArray(val_1.value, val_2.value, size.value);

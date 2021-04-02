@@ -19,8 +19,8 @@ function integerDivisors(num) {
 
 function commonMeanings(arr1, arr2) {
     let tempArr = [];
-    for (let i = 0; i < arr1.length; i++) {
-        for (let j = 0; j < arr2.length; j++) {
+    for (let i in arr1) {
+        for (let j in arr2) {
             if (arr1[i] == arr2[j]) {
                 let key = true;
                 for (let e = 0; e < tempArr.length; e++) {

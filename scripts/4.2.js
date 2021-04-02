@@ -20,7 +20,8 @@ function exitText(negativeNumbers, positiveNumbers, zero, size) {
     zero = (zero * 100) / size;
     zero = Math.round(zero * 1000) / 1000;
 
-    return negativeNumbers + ' % Отрицательные числа;<br> ' + positiveNumbers + ' % Положительные числа;<br> Ноль занимает ' + zero + ' %';
+    return negativeNumbers + ' % Отрицательные числа;<br> ' +
+        positiveNumbers + ' % Положительные числа;<br> Ноль занимает ' + zero + ' %';
 
 }
 
@@ -38,7 +39,7 @@ function arrayStatistics(from, to, size) {
             zero++;
         }
     }
-    return tempArray + '<br><br><br><br><br>' + exitText(negativeNumbers, positiveNumbers, zero, size);
+    return tempArray + '<br>' + exitText(negativeNumbers, positiveNumbers, zero, size);
 }
 
 valStat_1.oninput = function () {

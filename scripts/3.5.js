@@ -29,7 +29,7 @@ submit.onclick = function () {
 //  function createMatrix в отдельном скрипте
 function maxIndex(arr) {
     let temp = arr[0];
-    for (let i = 1; i < arr.length; i++) {
+    for (let i in arr) {
         if (temp < arr[i]) {
             temp = arr[i];
         }
@@ -40,15 +40,15 @@ function maxIndex(arr) {
 function matSum(arrMatr, ex) {
     let row = [arrMatr.length], col = [];
 
-    for (let i = 0; i < arrMatr.length; i++) {
+    for (let i in arrMatr) {
         row[i] = 0;
-        for (let j = 0; j < arrMatr[i].length; j++) {
+        for (let j in arrMatr[i]) {
             row[i] += Number(arrMatr[i][j].value);
         }
     }
-    for (let i = 0; i < arrMatr[0].length; i++) {
+    for (let i in arrMatr[0]) {
         col[i] = 0;
-        for (let j = 0; j < arrMatr.length; j++) {
+        for (let j in arrMatr) {
             col[i] += Number(arrMatr[j][i].value);
         }
     }
