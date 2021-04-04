@@ -8,12 +8,18 @@ let text = document.getElementById('text'),
     ex = document.getElementById('ex');
 
 //---------------------------------------------------------------------------------------------------------
+function percent(value, size) {
+    let tempValue = 0;
+    tempValue = (value * 100) / size;
+    tempValue = Math.round(tempValue * 10000) / 10000;
+    return tempValue;
+}
 function exitText(arrayWords, arrayStatistics, lengthText) {
     let tempText = '';
     for (let i in arrayWords) {
         if (arrayStatistics[i] != 1) {
             tempText += '<br><br>' + arrayWords[i] +
-                '<br>(' + Math.round((arrayStatistics[i] * 100) * 10000 / lengthText) / 10000 +
+                '<br>(' + percent(arrayStatistics[i], lengthText) +
                 '%, ' + arrayStatistics[i] + ' в тексте);<br><br>';
         } else {
             tempText += arrayWords[i] + ' ( УНИКАЛЬНОЕ );<br>';
