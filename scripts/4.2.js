@@ -10,19 +10,16 @@ let valStat_1 = document.getElementById('val_1'),
     exStat = document.getElementById('ex');
 
 //---------------------------------------------------------------------------------------------------------
+function percent(value, size) {
+    let tempValue = 0;
+    tempValue = (value * 100) / size;
+    tempValue = Math.round(tempValue * 1000) / 1000;
+    return tempValue;
+}
+
 function exitText(negativeNumbers, positiveNumbers, zero, size) {
-    negativeNumbers = (negativeNumbers * 100) / size;
-    negativeNumbers = Math.round(negativeNumbers * 1000) / 1000;
-
-    positiveNumbers = (positiveNumbers * 100) / size;
-    positiveNumbers = Math.round(positiveNumbers * 1000) / 1000;
-
-    zero = (zero * 100) / size;
-    zero = Math.round(zero * 1000) / 1000;
-
-    return negativeNumbers + ' % Отрицательные числа;<br> ' +
-        positiveNumbers + ' % Положительные числа;<br> Ноль занимает ' + zero + ' %';
-
+    return percent(negativeNumbers, size) + ' % Отрицательные числа;<br> ' +
+        percent(positiveNumbers, size) + ' % Положительные числа;<br> Ноль занимает ' + percent(zero, size) + ' %';
 }
 
 function arrayStatistics(from, to, size) {
