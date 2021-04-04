@@ -18,7 +18,7 @@ function percent(value, size) {
 }
 
 function exitText(negativeNumbers, positiveNumbers, zero, size) {
-    return percent(negativeNumbers, size) + ' % Отрицательные числа;<br> ' +
+    return '<br><br>' + percent(negativeNumbers, size) + ' % Отрицательные числа;<br> ' +
         percent(positiveNumbers, size) + ' % Положительные числа;<br> Ноль занимает ' + percent(zero, size) + ' %';
 }
 
@@ -36,7 +36,7 @@ function arrayStatistics(from, to, size) {
             zero++;
         }
     }
-    return tempArray + '<br>' + exitText(negativeNumbers, positiveNumbers, zero, size);
+    return tempArray + exitText(negativeNumbers, positiveNumbers, zero, size);
 }
 
 valStat_1.oninput = function () {
