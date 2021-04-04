@@ -11,21 +11,21 @@ let valStat_1 = document.getElementById('val_1'),
 
 //---------------------------------------------------------------------------------------------------------
 function percent(value, size) {
-    let tempValue = 0;
+    let tempValue;
     tempValue = (value * 100) / size;
     tempValue = Math.round(tempValue * 1000) / 1000;
     return tempValue;
 }
 
-function exitText(negativeNumbers, positiveNumbers, zero, size) {
-    return '<br><br>' + percent(negativeNumbers, size) + ' % Отрицательные числа;<br> ' +
-        percent(positiveNumbers, size) + ' % Положительные числа;<br> Ноль занимает ' + percent(zero, size) + ' %';
-}
+function arrayStatistics(array) {
+    let tempArray = array,
+        size = tempArray.length,
+        negativeNumbers = 0,
+        positiveNumbers = 0,
+        zero = 0;
 
-function arrayStatistics(from, to, size) {
-    let tempArray = creatRandomArray(from, to, size), negativeNumbers = 0, positiveNumbers = 0, zero = 0;
-    if (from == '' || to == '' || size == '') {
-        return '';
+    if (array.length == 0) {
+        return undefined;
     }
     for (let val of tempArray) {
         if (val < 0) {
@@ -36,15 +36,26 @@ function arrayStatistics(from, to, size) {
             zero++;
         }
     }
-    return tempArray + exitText(negativeNumbers, positiveNumbers, zero, size);
+    return [percent(negativeNumbers, size), percent(positiveNumbers, size), percent(zero, size)];
+}
+
+function textHTML(arrayStat, array){
+    if(typeof arrayStat === 'undefined') {
+        return '';
+    }
+    return array + '<br><br>Отрицательных ' + arrayStat[0] + '%<br>' +
+        'Положительных ' + arrayStat[1] + '%<br>Ноль ' + arrayStat[2] + '%';
 }
 
 valStat_1.oninput = function () {
-    exStat.innerHTML = arrayStatistics(valStat_1.value, valStat_2.value, sizeStat.value);
+    let array = creatRandomArray(valStat_1.value, valStat_2.value, sizeStat.value);
+    exStat.innerHTML = textHTML(arrayStatistics(array), array);
 }
 valStat_2.oninput = function () {
-    exStat.innerHTML = arrayStatistics(valStat_1.value, valStat_2.value, sizeStat.value);
+    let array = creatRandomArray(valStat_1.value, valStat_2.value, sizeStat.value);
+    exStat.innerHTML = textHTML(arrayStatistics(array), array);
 }
 sizeStat.oninput = function () {
-    exStat.innerHTML = arrayStatistics(valStat_1.value, valStat_2.value, sizeStat.value);
+    let array = creatRandomArray(valStat_1.value, valStat_2.value, sizeStat.value);
+    exStat.innerHTML = textHTML(arrayStatistics(array), array);
 }

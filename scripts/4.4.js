@@ -14,21 +14,16 @@ function percent(value, size) {
     tempValue = Math.round(tempValue * 10000) / 10000;
     return tempValue;
 }
-function exitText(arrayWords, arrayStatistics, lengthText) {
+function exitArray(arrayWords, arrayStatistics, lengthText) {
     let tempText = '';
-    for (let i in arrayWords) {
-        if (arrayStatistics[i] != 1) {
-            tempText += '<br><br>' + arrayWords[i] +
-                '<br>(' + percent(arrayStatistics[i], lengthText) +
-                '%, ' + arrayStatistics[i] + ' в тексте);<br><br>';
-        } else {
-            tempText += arrayWords[i] + ' ( УНИКАЛЬНОЕ );<br>';
-        }
+    let arrayPercent = [];
+    for (let i = 0;i < arrayWords.length;i++) {
+        arrayPercent.push([arrayWords[i], percent(arrayStatistics[i], lengthText)]);
     }
-    return tempText;
+    return arrayPercent;
 }
 
-function textStatistics(text) {
+function statisticsOfText(text) {
     let textArray = text.split(/\s+/),
         lengthText = textArray.length,
         current = [];
@@ -48,9 +43,18 @@ function textStatistics(text) {
             }
         }
     }
-    return exitText(textArray, current, lengthText);
+    return exitArray(textArray, current, lengthText);
 }
 
+function textHTML(arrStat){
+    let tempText = '';
+    for (let i of arrStat){
+        tempText += i[1] + ' %  - ' + i[0] + '<br>';
+    }
+    return tempText;
+}
+
+
 text.oninput = function () {
-    ex.innerHTML = textStatistics(text.value);
+    ex.innerHTML = textHTML(statisticsOfText(text.value));
 }
