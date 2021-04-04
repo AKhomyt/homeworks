@@ -14,10 +14,10 @@ function percent(value, size) {
     tempValue = Math.round(tempValue * 10000) / 10000;
     return tempValue;
 }
+
 function exitArray(arrayWords, arrayStatistics, lengthText) {
-    let tempText = '';
     let arrayPercent = [];
-    for (let i = 0;i < arrayWords.length;i++) {
+    for (let i = 0; i < arrayWords.length; i++) {
         arrayPercent.push([arrayWords[i], percent(arrayStatistics[i], lengthText)]);
     }
     return arrayPercent;
@@ -46,14 +46,13 @@ function statisticsOfText(text) {
     return exitArray(textArray, current, lengthText);
 }
 
-function textHTML(arrStat){
+function textHTML(arrStat) {
     let tempText = '';
-    for (let i of arrStat){
+    for (let i of arrStat) {
         tempText += i[1] + ' %  - ' + i[0] + '<br>';
     }
     return tempText;
 }
-
 
 text.oninput = function () {
     ex.innerHTML = textHTML(statisticsOfText(text.value));

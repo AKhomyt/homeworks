@@ -17,45 +17,72 @@ function percent(value, size) {
     return tempValue;
 }
 
-function arrayStatistics(array) {
+function negativeNumbers(array) {
     let tempArray = array,
         size = tempArray.length,
-        negativeNumbers = 0,
-        positiveNumbers = 0,
-        zero = 0;
+        temp = 0;
 
     if (array.length == 0) {
-        return undefined;
+        return '';
     }
     for (let val of tempArray) {
         if (val < 0) {
-            negativeNumbers++;
-        } else if (val > 0) {
-            positiveNumbers++;
-        } else {
-            zero++;
+            temp++;
         }
     }
-    return [percent(negativeNumbers, size), percent(positiveNumbers, size), percent(zero, size)];
+    return percent(temp, size);
 }
 
-function textHTML(arrayStat, array){
-    if(typeof arrayStat === 'undefined') {
+function positiveNumbers(array) {
+    let tempArray = array,
+        size = tempArray.length,
+        temp = 0;
+
+    if (array.length == 0) {
         return '';
     }
-    return array + '<br><br>Отрицательных ' + arrayStat[0] + '%<br>' +
-        'Положительных ' + arrayStat[1] + '%<br>Ноль ' + arrayStat[2] + '%';
+    for (let val of tempArray) {
+        if (val > 0) {
+            temp++;
+        }
+    }
+    return percent(temp, size);
+}
+
+function zero(array) {
+    let tempArray = array,
+        size = tempArray.length,
+        temp = 0;
+
+    if (array.length == 0) {
+        return '';
+    }
+    for (let val of tempArray) {
+        if (val == 0) {
+            temp++;
+            break;
+        }
+    }
+    return percent(temp, size);
+}
+
+function textHTML(negativeNumbers, positiveNumbers, zero, array) {
+    if (negativeNumbers == '' && positiveNumbers == '' && zero == '') {
+        return '';
+    }
+    return array + '<br><br>Отрицательных ' + negativeNumbers + '%<br>' +
+        'Положительных ' + positiveNumbers + '%<br>Ноль ' + zero + '%';
 }
 
 valStat_1.oninput = function () {
     let array = creatRandomArray(valStat_1.value, valStat_2.value, sizeStat.value);
-    exStat.innerHTML = textHTML(arrayStatistics(array), array);
+    exStat.innerHTML = textHTML(negativeNumbers(array), positiveNumbers(array), zero(array), array);
 }
 valStat_2.oninput = function () {
     let array = creatRandomArray(valStat_1.value, valStat_2.value, sizeStat.value);
-    exStat.innerHTML = textHTML(arrayStatistics(array), array);
+    exStat.innerHTML = textHTML(negativeNumbers(array), positiveNumbers(array), zero(array), array);
 }
 sizeStat.oninput = function () {
     let array = creatRandomArray(valStat_1.value, valStat_2.value, sizeStat.value);
-    exStat.innerHTML = textHTML(arrayStatistics(array), array);
+    exStat.innerHTML = textHTML(negativeNumbers(array), positiveNumbers(array), zero(array), array);
 }
