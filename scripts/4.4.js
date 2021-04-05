@@ -19,7 +19,6 @@ function resultArray(arrayWords, arrayStatistics) {
 
 function statisticsOfText(text) {
     let textArray = text.split(/\s+/),
-        lengthTextArray = textArray.length,
         current = [];
 
     for (let index = 0; index < textArray.length; index++) {
@@ -27,7 +26,6 @@ function statisticsOfText(text) {
         for (let i = index + 1; i < textArray.length; i++) {
             if (textArray[textArray.length - 1] == '') {
                 textArray.splice(textArray.length - 1, 1);
-                lengthTextArray--;
             }
             if (textArray[index] == textArray[i]) {
                 textArray.splice(i, 1);
@@ -41,7 +39,6 @@ function statisticsOfText(text) {
 
 function textHTML(arrStat) {
     let result = '';
-
     function checkingNumbers(numb) {
         if (numb == 2 || numb == 3 || numb == 4) {
             return true;
