@@ -15,11 +15,11 @@ let val_1 = document.getElementById('val_1'),
 //---------------------------------------------------------------------------------------------------------
 
 function createArray(from, to) {
-    let tempArray = [];
+    let resultArray = [];
     for (let i = 0; i <= (to - from); i++) {
-        tempArray[i] = Number(from) + i;
+        resultArray[i] = Number(from) + i;
     }
-    return tempArray;
+    return resultArray;
 }
 
 function randomNumber(from, to) {
@@ -27,17 +27,17 @@ function randomNumber(from, to) {
 }
 
 function creatRandomArray(from, to, size) {
-    let tempArray = createArray(from, to),
-        exitArray = [];
-    if (tempArray.length < size) {
-        return exitArray;
+    let inputArray = createArray(from, to),
+        resultArray = [];
+    if (inputArray.length < size) {
+        return resultArray;
     }
-    for (let i = 0; tempArray.length > 0 && i < size; i++) {
-        let randonIndex = randomNumber(0, tempArray.length);
-        exitArray[i] = tempArray[randonIndex];
-        tempArray.splice(randonIndex, 1);
+    for (let i = 0; inputArray.length > 0 && i < size; i++) {
+        let randonIndex = randomNumber(0, inputArray.length);
+        resultArray[i] = inputArray[randonIndex];
+        inputArray.splice(randonIndex, 1);
     }
-    return exitArray;
+    return resultArray;
 }
 
 val_1.oninput = function () {

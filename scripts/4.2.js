@@ -10,60 +10,54 @@ let valStat_1 = document.getElementById('val_1'),
     exStat = document.getElementById('ex');
 
 //---------------------------------------------------------------------------------------------------------
-function percent(value, size) {
-    let tempValue;
-    tempValue = (value * 100) / size;
-    tempValue = Math.round(tempValue * 1000) / 1000;
-    return tempValue;
-}
 
 function negativeNumbers(array) {
-    let tempArray = array,
-        size = tempArray.length,
-        temp = 0;
+    let workingArray = array,
+        size = workingArray.length,
+        val = 0;
 
     if (array.length == 0) {
         return '';
     }
-    for (let val of tempArray) {
-        if (val < 0) {
-            temp++;
+    for (let i of workingArray) {
+        if (i < 0) {
+            val++;
         }
     }
-    return percent(temp, size);
+    return CMath.prototype.percent(val, size);
 }
 
 function positiveNumbers(array) {
-    let tempArray = array,
-        size = tempArray.length,
-        temp = 0;
+    let workingArray = array,
+        size = workingArray.length,
+        val = 0;
 
     if (array.length == 0) {
         return '';
     }
-    for (let val of tempArray) {
-        if (val > 0) {
-            temp++;
+    for (let i of workingArray) {
+        if (i > 0) {
+            val++;
         }
     }
-    return percent(temp, size);
+    return CMath.prototype.percent(val, size);
 }
 
 function zero(array) {
-    let tempArray = array,
-        size = tempArray.length,
-        temp = 0;
+    let workingArray = array,
+        size = workingArray.length,
+        val = 0;
 
     if (array.length == 0) {
         return '';
     }
-    for (let val of tempArray) {
-        if (val == 0) {
-            temp++;
+    for (let i of workingArray) {
+        if (i == 0) {
+            val++;
             break;
         }
     }
-    return percent(temp, size);
+    return CMath.prototype.percent(val, size);
 }
 
 function textHTML(negativeNumbers, positiveNumbers, zero, array) {
