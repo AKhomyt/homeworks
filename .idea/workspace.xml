@@ -20,8 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2130abe5-05c2-472c-b18f-39cb884c0fda" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/scripts/5.1.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/5.2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/5.3.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/4.4.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/4.4.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +64,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -154,6 +157,14 @@
       <workItem from="1617640016374" duration="32000" />
       <workItem from="1617640422031" duration="331000" />
       <workItem from="1617640998135" duration="402000" />
+      <workItem from="1617641759387" duration="21000" />
+      <workItem from="1617657878799" duration="618000" />
+      <workItem from="1617692011282" duration="5820000" />
+      <workItem from="1617698824310" duration="6164000" />
+      <workItem from="1617714285935" duration="7700000" />
+      <workItem from="1617723673501" duration="123000" />
+      <workItem from="1617797011276" duration="6787000" />
+      <workItem from="1617804735316" duration="166000" />
     </task>
     <servers />
   </component>
@@ -185,6 +196,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="739" y="266" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1615802165330" />
+    <state x="200" y="164" key="SettingsEditor" timestamp="1617723768976">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="200" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1617723768976" />
     <state x="616" y="245" key="run.anything.popup" timestamp="1616940846510">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
