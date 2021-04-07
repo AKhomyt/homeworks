@@ -13,12 +13,12 @@
 
 //---------------------------------------------------------------------------------------------------------
 
-function averageAssessments(Assessments) {
+function averageAssessments(assessments) {
     let sum = 0;
-    for (let i = 0; i < Assessments.length; i++) {
-        sum += Assessments[i];
+    for (let i = 0; i < assessments.length; i++) {
+        sum += assessments[i];
     }
-    return sum / Assessments.length;
+    return sum / assessments.length;
 }
 
 function activeStudentsByYearOfStudy(students, year){
