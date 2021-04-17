@@ -83,23 +83,25 @@ function resultAverageAssessments(calculateAverageAssessments, students){
     return result + '\n\nВсего неактивных студентов: ' + inactiveStudentsAll;
 }
 //---------------------------------------------------------------------------------------------------------
-let students = [
-    {name: 'student1', estimate: 3, course: 2, active: true},
-    {name: 'student2', estimate: 3, course: 1, active: false},
-    {name: 'student3', estimate: 1, course: 4, active: true},
-    {name: 'student4', estimate: 5, course: 2, active: true},
-    {name: 'student5', estimate: 4, course: 3, active: false},
-    {name: 'student6', estimate: 3, course: 1, active: true},
-    {name: 'student7', estimate: 2, course: 4, active: false},
-    {name: 'student8', estimate: 4, course: 2, active: true},
-    {name: 'student9', estimate: 5, course: 1, active: true},
-    {name: 'student10', estimate: 2, course: 2, active: false},
-    {name: 'student11', estimate: 5, course: 4, active: true},
-    {name: 'student12', estimate: 5, course: 3, active: true},
-    {name: 'student13', estimate: 2, course: 4, active: false}
+{
+    let students = [
+        {name: 'student1', estimate: 3, course: 2, active: true},
+        {name: 'student2', estimate: 3, course: 1, active: false},
+        {name: 'student3', estimate: 1, course: 4, active: true},
+        {name: 'student4', estimate: 5, course: 2, active: true},
+        {name: 'student5', estimate: 4, course: 3, active: false},
+        {name: 'student6', estimate: 3, course: 1, active: true},
+        {name: 'student7', estimate: 2, course: 4, active: false},
+        {name: 'student8', estimate: 4, course: 2, active: true},
+        {name: 'student9', estimate: 5, course: 1, active: true},
+        {name: 'student10', estimate: 2, course: 2, active: false},
+        {name: 'student11', estimate: 5, course: 4, active: true},
+        {name: 'student12', estimate: 5, course: 3, active: true},
+        {name: 'student13', estimate: 2, course: 4, active: false}
     ];
-let array = [7, 8, 8, 9, 9, 7];
-let  text = resultAverageAssessments(calculateAverageAssessments(assessments(distributionByCourse(students))), students);
-console.log(text);
+    let array = [7, 8, 8, 9, 9, 7];
 
+    let text = resultAverageAssessments(calculateAverageAssessments(assessments(distributionByCourse(students))), students);
+    console.log(text);
+}
 //console.log(inactiveStudentsByYearOfStudy(students, 4).length);

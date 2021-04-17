@@ -17,7 +17,8 @@ function checkForUniquenessOfElements(array) {
 }
 
 //---------------------------------------------------------------------------------------------------------
+{
+    let array = [1, 2, 4, 5, 9, 7];
 
-let array = [1, 2, 4, 5, 9, 7];
-
-console.log(checkForUniquenessOfElements(array));
+    console.log(checkForUniquenessOfElements(array));
+}

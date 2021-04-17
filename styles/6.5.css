@@ -1,0 +1,71 @@
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.cont {
+    background: #c6c6ff;
+    width: 900px;
+    margin: 40px auto;
+    padding: 10px;
+    border-radius: 19px;
+    font-size: 19px;
+    text-align: center;
+    background: rgba(60, 60, 165, 0.53);
+}
+
+#formOfStudent {
+    margin: 40px;
+    position: fixed;
+    text-align: justify;
+    display: inline-block;
+    padding: 20px;
+    width: min-content;
+    background: #c6c6ff;
+}
+
+.customClass:hover {
+    background-color: rgba(238, 234, 226, 0.7);
+    transition: background-color 100ms;
+}
+.customClass {
+    text-align: left;
+    width: max-content;
+    display: inline-block;
+    transition: background-color 100ms;
+}
+#Chead {
+    position: sticky;
+}
+#listOfStudents {
+    border: 1px solid #fafdea;
+    background-color: rgba(238, 234, 226, 0.46);
+    width: max-content;
+    margin: 40px auto;
+    padding: 10px;
+    border-radius: 19px;
+    font-size: 19px;
+    text-align: right;
+}
+#listOfStudents input[type="button"]{
+    color: #ffffff;
+    background: rgba(0, 0, 0, 0);
+    border: none;
+}
+#statistic {
+    line-height: 1.4;
+    display: inline-block;
+    border: 1px solid #fafdea;
+    background-color: rgba(0, 0, 0, 0.2);
+    width: max-content;
+    margin: 40px auto;
+    padding: 20px 0;
+    border-radius: 19px;
+    font-size: 19px;
+    text-align: left;
+}
+.z {
+    background-color: #ff0;
+}

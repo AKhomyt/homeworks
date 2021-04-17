@@ -20,10 +20,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2130abe5-05c2-472c-b18f-39cb884c0fda" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/scripts/5.1.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/5.2.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/5.3.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html/6.1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html/6.2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html/6.3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html/6.4.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html/6.5-7.8.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/6.1.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/6.2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/6.3.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/6.3COPY.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/6.4.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/6.5-7.8.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/6.5copy.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/6.5copy2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/styles/6.1.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/styles/6.3.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/styles/6.4.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/styles/6.5.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/3.3.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/3.3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/3.4.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/3.4.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/3.5.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/3.5.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/3.6.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/3.6.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/createMatrix.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/5.2.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/5.2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/5.3.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/5.3.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/CustomClasses.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/CustomClasses.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/createMatrix.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/create.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +70,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
   <component name="ProjectId" id="1pedPotmCEQ8U48e4lnnwTjd0v6" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -64,7 +95,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -165,6 +196,55 @@
       <workItem from="1617723673501" duration="123000" />
       <workItem from="1617797011276" duration="6787000" />
       <workItem from="1617804735316" duration="166000" />
+      <workItem from="1617805971256" duration="329000" />
+      <workItem from="1617811063248" duration="1421000" />
+      <workItem from="1617884654101" duration="10159000" />
+      <workItem from="1617895420208" duration="1379000" />
+      <workItem from="1617896846414" duration="2641000" />
+      <workItem from="1617949054094" duration="2405000" />
+      <workItem from="1617952739940" duration="24805000" />
+      <workItem from="1618121068593" duration="1004000" />
+      <workItem from="1618122099543" duration="2176000" />
+      <workItem from="1618147613668" duration="4286000" />
+      <workItem from="1618151978194" duration="8125000" />
+      <workItem from="1618160209197" duration="1337000" />
+      <workItem from="1618161584479" duration="2596000" />
+      <workItem from="1618164219380" duration="404000" />
+      <workItem from="1618177547694" duration="189000" />
+      <workItem from="1618213462889" duration="6140000" />
+      <workItem from="1618224841022" duration="611000" />
+      <workItem from="1618225585648" duration="2003000" />
+      <workItem from="1618228049678" duration="10295000" />
+      <workItem from="1618255448943" duration="1568000" />
+      <workItem from="1618257059226" duration="2743000" />
+      <workItem from="1618302080873" duration="4974000" />
+      <workItem from="1618307441915" duration="1354000" />
+      <workItem from="1618309615720" duration="12518000" />
+      <workItem from="1618329911647" duration="4817000" />
+      <workItem from="1618341144713" duration="1940000" />
+      <workItem from="1618344786308" duration="1519000" />
+      <workItem from="1618383353176" duration="1475000" />
+      <workItem from="1618384870921" duration="2000" />
+      <workItem from="1618385314114" duration="7000" />
+      <workItem from="1618385334376" duration="118000" />
+      <workItem from="1618392356804" duration="1265000" />
+      <workItem from="1618394348429" duration="421000" />
+      <workItem from="1618395440997" duration="976000" />
+      <workItem from="1618398278135" duration="20900000" />
+      <workItem from="1618435426004" duration="232000" />
+      <workItem from="1618479517189" duration="3479000" />
+      <workItem from="1618498868021" duration="14373000" />
+      <workItem from="1618516911845" duration="949000" />
+      <workItem from="1618517891963" duration="3513000" />
+      <workItem from="1618521531737" duration="1014000" />
+      <workItem from="1618571653094" duration="11507000" />
+      <workItem from="1618585970002" duration="9246000" />
+      <workItem from="1618595327678" duration="1949000" />
+      <workItem from="1618597316936" duration="1015000" />
+      <workItem from="1618598581701" duration="12361000" />
+      <workItem from="1618639119068" duration="9508000" />
+      <workItem from="1618651212149" duration="2578000" />
+      <workItem from="1618653949290" duration="393000" />
     </task>
     <servers />
   </component>
@@ -196,17 +276,33 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="739" y="266" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1615802165330" />
-    <state x="200" y="164" key="SettingsEditor" timestamp="1617723768976">
+    <state x="-4" y="346" width="760" height="507" key="Registry" timestamp="1618515657867">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="200" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1617723768976" />
+    <state x="-4" y="346" width="760" height="507" key="Registry/0.0.1920.1040@0.0.1920.1040" timestamp="1618515657867" />
+    <state x="200" y="164" key="SettingsEditor" timestamp="1618394767979">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="200" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1618394767979" />
+    <state x="581" y="115" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1618648729422">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="581" y="115" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1618648729422" />
+    <state x="769" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1618330135338">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="769" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1618330135338" />
+    <state x="554" y="241" width="700" height="626" key="recent.locations.popup" timestamp="1618121155335">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="554" y="241" width="700" height="626" key="recent.locations.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1618121155335" />
     <state x="616" y="245" key="run.anything.popup" timestamp="1616940846510">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="245" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1616940846510" />
-    <state x="536" y="272" width="672" height="678" key="search.everywhere.popup" timestamp="1617284948355">
+    <state x="536" y="272" width="672" height="678" key="search.everywhere.popup" timestamp="1618515608233">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="536" y="272" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1617284948355" />
+    <state x="536" y="272" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1618515608233" />
   </component>
 </project>

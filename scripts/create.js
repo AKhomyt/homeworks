@@ -1,5 +1,7 @@
 "use strict"
 
+//createMatrix---------------------------------------------------------
+
 function multidimensionalArayGeration(nElemArray) {
     //Создается N мерный массив
     let exitArray = [];
@@ -45,7 +47,7 @@ function autocomplete(xMatrix, yMatrix, arrayMatrix, inputID, key) {
     }
     return arrayMatrix;
 }
-//---------------------------------------------------------------------------------------------------------
+
 function createMatrix(x, y, exObject, idName, complete) {
     /*
         Создание матрицы X на Y в виде таблицы и ее вставка в exObject,
@@ -60,30 +62,47 @@ function createMatrix(x, y, exObject, idName, complete) {
 
     return autocomplete(x, y, arrElem, idName, complete);
 }
-//---------------------------------------------------------------------------------------------------------
-/*
 
-let x = document.getElementById("x"),
-    y = document.getElementById("y"),
-    matrixId = document.getElementById("matrix"),
-    fill = document.getElementById('batt1'),
-    clear = document.getElementById('batt2'),
-    elamentsOfMatrix;
+//createMatrix---------------------------------------------------------
+//createFormOfStudent--------------------------------------------------
 
-x.oninput = function () {
-    createMatrix(this.value, y.value, matrixId, 'idName');
-}
-y.oninput = function () {
-    createMatrix(x.value, this.value, matrixId, 'idName');
-}
-fill.onclick = function () {
-    createMatrix(x.value, y.value, matrixId,'idName', true);
-}
-clear.onclick = function () {
-    createMatrix(x.value, y.value, matrixId,'idName');
+function formOfStudents(student) {
+    /*
+    Создает и возвращает форму для
+    редактированния массива студентов.
+    student = {name: '', estimate: '', course: '', active: false}
+    */
+    let form = document.createElement('form'),
+        tableNode = CcreateHTML.prototype.table(2, 2);
+    form.appendChild(tableNode);
+
+    student = student || {name: '', estimate: '', course: 1, active: false};
+
+    tableNode.tr[0].td[0].innerHTML = '<input type="text" value="' + student.name + '" size="35" placeholder="Фамилия Имя Отчество" name="surnameName">'
+
+    tableNode.tr[0].td[1].innerHTML = '<input type="text" value="' + student.estimate + '" size="10" placeholder="Оценка" name="score">'
+
+    tableNode.tr[1].td[0].innerHTML = '<select placeholder="Курс" name="course">' +
+        '<option>Курс 1</option>' +
+        '<option>Курс 2</option>' +
+        '<option>Курс 3</option>' +
+        '<option>Курс 4</option>' +
+        '</select>'
+
+    form.elements.course[student.course - 1].selected = true;
+
+    tableNode.tr[1].td[1].innerHTML = 'Активный: ' +
+        '<input type="checkbox" name="active" checked>'
+
+    form.elements.active.checked = student.active
+    form.style.cssText = 'left: 35%; top: 40%; background: #c6c6ff; width: min-content; position: absolute;';
+    form.innerHTML += '<input type="button" name="clearForm" value="Закрыть">';
+
+    form.elements.clearForm.onclick = function () {
+        form.remove();
+    }
+
+    return form;
 }
 
-elamentsOfMatrix = createMatrix(x.value, y.value, matrixId, 'idName',);
-*/
-
-//---------------------------------------------------------------------------------------------------------
+//createFormOfStudent--------------------------------------------------
