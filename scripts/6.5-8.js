@@ -18,21 +18,90 @@
   имя студента
   7.6 По аналогии предыдущего пункта сделать тоже самое с номером курса и с оценкой студента.
   Не забыть что при изменении оценки статистика также должна быть пересчитана и выведена новая статистика.
+  8.1 Так же организовать возможность изменения по аналогии с именем.
+  8.2 Написать регулярное выражение проверки введенных данных email.
+  8.3 Написать валидацию проверку ввода данных - курс это любое целое число от 1 до 5.
+  8.4 Если при вводе в любую из форм введены невалидные данные - сообщать об этом в окне с ошибкой.
+  8.5 Изменять данные физически тогда и только тогда, когда будут введены корректные.
+  8.6 Все данные хранить в localStorage касательно студентов.
+  8.7 При открытии страницы выбирать из localstorage и показывать список студентов и статистику соответственно.
+  8.8 Если localstorage не имеет никаких данных в себе, показывать что ничего нет при добавлении из
+  формы нового студента - данные должны попасть и сохраниться в localstorage, при следующем
+  открытии страницы - уже подтянуться сохраненные данные.
 */
 
 //---------------------------------------------------------------------------------------------------------
 function Student(students, listContainer, statisticsContainer) {
-    this.students = students || [];
+
+    this.students = JSON.parse(localStorage.getItem('students')) || students || [];
     this.listContainer = listContainer || {};
     this.statisticsContainer = statisticsContainer || {};
+    this.dataLocalStorage = 0;
+
+    for (let i = 0; i < this.students.length; i++) {
+        if (typeof this.students[i].email == "undefined") {
+            this.students[i].email = '';
+        }
+    }
 }
 
 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 Student.prototype.restart = function () {
+    localStorage.setItem('students', JSON.stringify(this.students));
+
     let restart = new Student(this.students, this.listContainer, this.statisticsContainer);
     restart.listOfStudents();
     restart.statistics();
 }
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Student.prototype.eventList = function (nodeList, element, nameProperty, size, regularExpressions) {
+    nodeList.onclick = () => {
+        nodeList.onclick = null;
+        let input = document.createElement('input');
+        input.size = size,
+            input.text = nodeList.innerHTML;
+        nodeList.innerHTML = '';
+        nodeList.appendChild(input);
+        input.focus();
+
+        input.onkeypress = (event) => {
+            if (event.which == 13) {
+                let reg = /^\s*$/;
+                if (reg.test(input.value)) {
+                    element[nameProperty] = input.text;
+                    this.restart();
+                    return;
+                }
+                if (regularExpressions.test(input.value)) {
+                    element[nameProperty] = input.value;
+                    this.restart();
+                    return;
+                } else {
+                    element[nameProperty] = input.text;
+                    this.restart();
+                }
+            }
+        }
+        input.onblur = () => {
+            let reg = /^\s*$/;
+            if (reg.test(input.value)) {
+                element[nameProperty] = input.text;
+                this.restart();
+                return;
+            }
+            if (regularExpressions.test(input.value)) {
+                element[nameProperty] = input.value;
+                this.restart();
+                return;
+            } else {
+                element[nameProperty] = input.text;
+                this.restart();
+                alert('Некорректный ввод. ( ' + nameProperty + ' )');
+            }
+        }
+    }
+}
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 Student.prototype.statistics = function () {
     let array = this.students.slice(0),
         courses = [];
@@ -71,7 +140,7 @@ Student.prototype.statistics = function () {
                 noActiveAll++;
             }
             if (arrayStud[j].course == courses[i]) {
-                arrayEstimates[i] += arrayStud[j].estimate;
+                arrayEstimates[i] += arrayStud[j].estimate * 1;
                 count++;
             }
         }
@@ -108,6 +177,7 @@ Student.prototype.listOfStudents = function () {
     this.listContainer.innerHTML = '';
     let result = [];
     for (let i = 0; i < this.students.length; i++) {
+
         result[i] = document.createElement('div');
         result[i].className = 'customClass';
 
@@ -119,14 +189,15 @@ Student.prototype.listOfStudents = function () {
             this.students.splice(i, 1);
 
             this.listContainer.innerHTML = '';
-            (new Student(this.students, this.listContainer, this.statisticsContainer)).restart();
+            this.restart();
             return;
         }
 //Данные студента и события формы ввода-------------------------------------------------------------------
         let surName = document.createElement('span'),
             course = document.createElement('span'),
             estimate = document.createElement('span'),
-            active = document.createElement('input');
+            active = document.createElement('input'),
+            email = document.createElement('span');
 
         active.type = 'checkbox';
         active.checked = this.students[i].active;
@@ -144,11 +215,13 @@ Student.prototype.listOfStudents = function () {
             course.style.cssText = 'color: #090';
             estimate.style.cssText = 'color: #090';
         }
-        result[i].appendChild(document.createTextNode('Студент: '));
+
+        result[i].appendChild(document.createTextNode('Ф.И.: '));
         result[i].appendChild(surName);
         surName.innerHTML = this.students[i].name;
+        result[i].appendChild(document.createElement('br'));
 
-        result[i].appendChild(document.createTextNode(', курс: '));
+        result[i].appendChild(document.createTextNode('курс: '));
         result[i].appendChild(course);
         course.innerHTML = this.students[i].course;
 
@@ -156,101 +229,37 @@ Student.prototype.listOfStudents = function () {
         result[i].appendChild(estimate);
         estimate.innerHTML = this.students[i].estimate;
 
-        result[i].appendChild(document.createTextNode(', '));
+        result[i].appendChild(document.createTextNode(', активный'));
         result[i].appendChild(active);
 
-        // Events>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-        result[i].childNodes[2].onclick = () => {
-            result[i].childNodes[2].onclick = null;
-            let input = document.createElement('input');
-            input.size = 27,
-                input.text = result[i].childNodes[2].innerHTML;
-            result[i].childNodes[2].innerHTML = '';
-            result[i].childNodes[2].appendChild(input);
-            input.focus();
-            input.onkeypress = (event) => {
-                if (event.which == 13) {
-                    if (input.value == '') {
-                        this.students[i].name = input.text;
-                        (new Student(this.students, this.listContainer, this.statisticsContainer)).restart();
-                        return;
-                    }
-                    this.students[i].name = input.value;
-                    (new Student(this.students, this.listContainer, this.statisticsContainer)).restart();
-                }
-            }
-            input.onblur = () => {
-                if (input.value == '') {
-                    this.students[i].name = input.text;
-                    (new Student(this.students, this.listContainer, this.statisticsContainer)).restart();
-                    return;
-                }
-                this.students[i].name = input.value;
-                (new Student(this.students, this.listContainer, this.statisticsContainer)).restart();
-            }
-        }
-        result[i].childNodes[4].onclick = (event) => {
-            result[i].childNodes[4].onclick = null;
-            let input = document.createElement('input');
-            input.size = 1,
-                input.text = result[i].childNodes[4].innerHTML;
-            result[i].childNodes[4].innerHTML = '';
-            result[i].childNodes[4].appendChild(input);
-            input.focus();
-            input.onkeypress = (event) => {
-                if (event.which == 13) {
-                    if (input.value == '') {
-                        this.students[i].course = input.text;
-                        (new Student(this.students, this.listContainer, this.statisticsContainer)).restart();
-                        return;
-                    }
-                    this.students[i].course = input.value * 1;
-                    (new Student(this.students, this.listContainer, this.statisticsContainer)).restart();
-                }
-            }
-            input.onblur = () => {
-                if (input.value == '') {
-                    this.students[i].course = input.text;
-                    (new Student(this.students, this.listContainer, this.statisticsContainer)).restart();
-                    return;
-                }
-                this.students[i].course = input.value * 1;
-                (new Student(this.students, this.listContainer, this.statisticsContainer)).restart();
-            }
-        }
-        result[i].childNodes[6].onclick = () => {
-            result[i].childNodes[6].onclick = null;
-            let input = document.createElement('input');
-            input.size = 1,
-                input.text = result[i].childNodes[6].innerHTML;
 
-            result[i].childNodes[6].innerHTML = '';
-            result[i].childNodes[6].appendChild(input);
-            input.focus();
-            input.onkeypress = (event) => {
-                if (event.which == 13) {
-                    if (input.value == '') {
-                        this.students[i].estimate = input.text;
-                        (new Student(this.students, this.listContainer, this.statisticsContainer)).restart();
-                        return;
-                    }
-                    this.students[i].estimate = input.value * 1;
-                    (new Student(this.students, this.listContainer, this.statisticsContainer)).restart();
-                }
-            }
-            input.onblur = () => {
-                if (input.value == '') {
-                    this.students[i].estimate = input.text;
-                    (new Student(this.students, this.listContainer, this.statisticsContainer)).restart();
-                    return;
-                }
-                this.students[i].estimate = input.value * 1;
-                (new Student(this.students, this.listContainer, this.statisticsContainer)).restart();
-            }
+        result[i].appendChild(document.createElement('br'));
+
+        if (this.students[i].email != '') {
+            result[i].appendChild(document.createElement('a'));
+            result[i].childNodes[11].innerHTML = 'email:'
+            result[i].childNodes[11].href = 'mailto:' + this.students[i].email;
+            result[i].childNodes[11].style.cssText = 'color: #00f;';
+            result[i].appendChild(email);
+            email.innerHTML = this.students[i].email;
+        } else {
+            result[i].appendChild(document.createTextNode('email: '));
+            result[i].appendChild(email);
+            email.innerHTML = 'email не задан.';
         }
+
+        result[i].appendChild(document.createElement('br'));
+        result[i].appendChild(document.createElement('br'));
+
+        // Events>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+        this.eventList(result[i].childNodes[2], this.students[i], 'name', 27, / *[А-ЯЁ][а-яё]+ +[А-ЯЁ][а-яё]+ */);
+        this.eventList(result[i].childNodes[5], this.students[i], 'course', 1, /^\b[1-5]{1}\b$/);
+        this.eventList(result[i].childNodes[7], this.students[i], 'estimate', 1, /^\b[1-5]{1}\b$/);
+        this.eventList(result[i].childNodes[12], this.students[i], 'email', 27, /^[A-Za-zА-ЯЁа-яё0-9\.]+@[A-Za-z0-9]+\.[A-Za-z]+$/);
+
         active.onchange = () => {
             this.students[i].active = active.checked;
-            (new Student(this.students, this.listContainer, this.statisticsContainer)).restart();
+            this.restart();
         }
         // Events<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
     }
@@ -264,25 +273,10 @@ Student.prototype.listOfStudents = function () {
 
 
 {
-    let students = [
-        {name: 'student1', estimate: 3, course: 2, active: false},
-        {name: 'student2', estimate: 3, course: 1, active: false},
-        {name: 'student3', estimate: 1, course: 4, active: true},
-        {name: 'student4', estimate: 5, course: 2, active: true},
-        {name: 'student5', estimate: 4, course: 3, active: false},
-        {name: 'student6', estimate: 3, course: 1, active: true},
-        {name: 'student7', estimate: 2, course: 4, active: false},
-        {name: 'student8', estimate: 4, course: 2, active: true},
-        {name: 'student9', estimate: 5, course: 1, active: true},
-        {name: 'student10', estimate: 2, course: 2, active: false},
-        {name: 'student11', estimate: 5, course: 4, active: true},
-        {name: 'student12', estimate: 5, course: 3, active: true},
-        {name: 'student13', estimate: 2, course: 4, active: false}
-    ];
-
+    //let students = [];
     let stat = document.getElementById('statistic');
     let container = document.querySelector('#listOfStudents');
-    let stud = new Student(students, container, stat);
+    let stud = new Student([], container, stat);
 
     stud.restart();
 
@@ -294,10 +288,32 @@ Student.prototype.listOfStudents = function () {
         student.name = this.form.elements['surnameName'].value,
             student.estimate = this.form.elements['estimate'].value * 1,
             student.course = this.form.elements['course'].value * 1,
-            student.active = this.form.elements['active'].checked;
+            student.active = this.form.elements['active'].checked,
+            student.email = this.form.elements['email'].value;
 
-        stud.students.push(student);
-        stud.restart();
+        let regName = / *[А-ЯЁ][а-яё]+ +[А-ЯЁ][а-яё]+ */,
+            regEstimate = /^\b[1-5]{1}\b$/,
+            regCourse = /^\b[1-5]{1}\b$/,
+            regEmail = /^[A-Za-zА-ЯЁа-яё0-9\.]+@[A-Za-z0-9]+\.[A-Za-z]+$/;
+
+        if (regName.test(student.name)) {
+            if (regEmail.test(student.email)) {
+                if (regCourse.test(student.course)) {
+                    if (regEstimate.test(student.estimate)) {
+                        stud.students.push(student);
+                        stud.restart();
+                    } else {
+                        alert('Некорректно задана, или не задана, оценка.');
+                    }
+                } else {
+                    alert('Некорректно задан, или не задан, курс.');
+                }
+            } else {
+                alert('Некорректно задан, или не задан, email.');
+            }
+        } else {
+            alert('Введите корректную фамилию, имя.');
+        }
     }
 
     let b = document.getElementById('r');
