@@ -8,10 +8,6 @@
 */
 
 //---------------------------------------------------------------------------------------------------------
-function Students() {
-    this.student = [];
-}
-
 let list = document.getElementById('listOfStudents');
 
 function createList(students, list) {
@@ -58,7 +54,6 @@ function createList(students, list) {
 //---------------------------------------------------------------------------------------------------------
 
 {
-
     let students = [
         {name: 'student1', estimate: 3, course: 2, active: false},
         {name: 'student2', estimate: 3, course: 1, active: false},
@@ -74,8 +69,6 @@ function createList(students, list) {
         {name: 'student12', estimate: 5, course: 3, active: true},
         {name: 'student13', estimate: 2, course: 4, active: false}
     ];
-
-    Students.student = students;
-
-    createList(Students.student, list);
+    
+    createList(students, list);
 }

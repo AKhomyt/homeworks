@@ -36,7 +36,6 @@ function Student(students, listContainer, statisticsContainer) {
     this.students = JSON.parse(localStorage.getItem('students')) || students || [];
     this.listContainer = listContainer || {};
     this.statisticsContainer = statisticsContainer || {};
-    this.dataLocalStorage = 0;
 
     for (let i = 0; i < this.students.length; i++) {
         if (typeof this.students[i].email == "undefined") {
@@ -314,12 +313,5 @@ Student.prototype.listOfStudents = function () {
         } else {
             alert('Введите корректную фамилию, имя.');
         }
-    }
-
-    let b = document.getElementById('r');
-
-    r.onclick = () => {
-        console.clear();
-        console.log(stud.students);
     }
 }
