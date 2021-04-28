@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>задание 6.5-8</title>
+        <link href="../styles/8.css" rel="stylesheet">
+        <script src="../scripts/9.js" defer></script>
+
+    </head>
+    <body>
+        <form id="formOfStudent">
+            <table>
+                <tbody>
+                    <tr>
+                        <td>Ф.И.</td>
+                        <td colspan="2"><input type="text" size="25" name="surnameName" placeholder="Фамилия Имя"></td>
+                    </tr>
+                    <tr>
+                        <td>email</td>
+                        <td colspan="2"><input type="text" size="25" name="email" placeholder="Адрес email"></td>
+                    </tr>
+                    <tr>
+                        <td><br>курс<input type="text" size="7" name="course" placeholder="Курс"></td>
+                        <td><br>оценка<input type="text" size="7" name="estimate" placeholder="Оценка"></td>
+                        <td><label><br>&nbsp;Активность<input type="checkbox" name="active"></label></td>
+                    </tr>
+                    <tr>
+                        <td><br><input type="reset" value="Очистить"></td>
+                        <td colspan="2" align="right"><br><input type="button" name="add" value="Добавить"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+        <div class="cont">
+            <h3>Задания 6.5-8</h3>
+            <p id="statistic"></p>
+            <p id="listOfStudents"></p>
+        </div>
+    </body>
+</html>
