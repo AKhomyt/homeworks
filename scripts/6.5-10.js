@@ -28,14 +28,25 @@
   8.8 Если localstorage не имеет никаких данных в себе, показывать что ничего нет при добавлении из
   формы нового студента - данные должны попасть и сохраниться в localstorage, при следующем
   открытии страницы - уже подтянуться сохраненные данные.
+  9.1 Написать ajax запрос получения данных по студентам из сервера (сервис будет предоставлен)
+  9.2 Выводить данные полученные от сервера соответственно логике описанной в предыдущих занятиях предыдущих уроках
+  9.3 Аналогично для удаления, добавления и изменения статуса студентов написать ajax-запросы
+  9.4 Проверять если сервис доступный для работы со студентами работать с ним, если нет - то
+  работать с localstorage как было реализовано ранее
+Задание десятое
+  10.1 Продумать как лучше реализовать всю цепочку задач со студентами, какие функции должны быть, как называться,
+  что принимать по параметрам и что возвращать. Аргументировать свой ответ
+  10.2Переписать работу со всей функциональностью студентов с помощью классов
 */
 
 //---------------------------------------------------------------------------------------------------------
-function Student(students, listContainer, statisticsContainer) {
-
+function Student(students, listContainer, statisticsContainer, url) {
+    this.url = url || undefined;
     this.students = JSON.parse(localStorage.getItem('students')) || students || [];
     this.listContainer = listContainer || {};
     this.statisticsContainer = statisticsContainer || {};
+    this.firstStart = 2;
+    this.online = true;
 
     for (let i = 0; i < this.students.length; i++) {
         if (typeof this.students[i].email == "undefined") {
@@ -44,25 +55,94 @@ function Student(students, listContainer, statisticsContainer) {
     }
 }
 
-//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 Student.prototype.restart = function () {
-    localStorage.setItem('students', JSON.stringify(this.students));
 
-    let restart = new Student(this.students, this.listContainer, this.statisticsContainer);
+    let xhr = new XMLHttpRequest();
+    xhr.open('GET', this.url, false);
+
+    xhr.setRequestHeader("Content-type", "application/json; charset=utf-8");
+    xhr.setRequestHeader("X-Authorization-Token", "177c9487-a2a8-11eb-b8cf-001b21474ee8");
+
+    try {
+        xhr.send(null);
+    } catch (e) {
+        this.online = false;
+    }
+
+    if (xhr.status == 200) {
+        if (this.firstStart == 0) {
+            this.serverUpdate();
+        }
+        this.online = true;
+    }
+    this.createForm();
+    if (Array.isArray(this.students) && this.students.length >= 1) {
+        localStorage.setItem('students', JSON.stringify(this.students));
+    } else {
+        localStorage.setItem('students', '[]');
+    }
+    let restart = new Student(this.students, this.listContainer, this.statisticsContainer, this.url, this.online);
     restart.listOfStudents();
     restart.statistics();
+    restart.test();
 }
-//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+Student.prototype.ajax = function (method, url, callback, student) {
+    let xhr = new XMLHttpRequest();
+    xhr.open(method, url, true);
+    let offlineData = {
+        student: {id: 0, first_name: "", estimate: 0, course: 2, is_active: false}
+    };
+    let data = student || false;
+
+    xhr.setRequestHeader("Content-type", "application/json; charset=utf-8");
+    xhr.setRequestHeader("X-Authorization-Token", "177c9487-a2a8-11eb-b8cf-001b21474ee8");
+
+    if (data) {
+        xhr.send(JSON.stringify(data));
+    } else {
+        xhr.send();
+    }
+
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState != 4) {
+            return;
+        }
+        if (xhr.status == 200) {
+            callback(JSON.parse(xhr.responseText));
+        } else {
+            callback();
+        }
+    }
+}
+
+Student.prototype.serverUpdate = function () {
+    let local = JSON.parse(localStorage.getItem('students'));
+    let mainObject = this;
+
+    mainObject.ajax("GET", mainObject.url, (data) => {
+        for (let i = 0; i < local.length; i++) {
+            if (local[i].id == '') {
+                mainObject.ajax('POST', mainObject.url, (elem) => {
+                }, local[i]);
+            }
+        }
+        mainObject.students = data.students;
+        mainObject.firstStart--;
+        mainObject.restart();
+    });
+}
+
 Student.prototype.eventList = function (nodeList, element, nameProperty, size, regularExpressions) {
+    let mainObject = this;
     nodeList.onclick = () => {
         nodeList.onclick = null;
         let input = document.createElement('input');
-        input.size = size,
-            input.text = nodeList.innerHTML;
+        input.size = size;
+        input.text = nodeList.innerHTML;
         nodeList.innerHTML = '';
         nodeList.appendChild(input);
         input.focus();
-
         input.onkeypress = (event) => {
             if (event.which == 13) {
                 let reg = /^\s*$/;
@@ -90,8 +170,13 @@ Student.prototype.eventList = function (nodeList, element, nameProperty, size, r
             }
             if (regularExpressions.test(input.value)) {
                 element[nameProperty] = input.value;
-                this.restart();
-                return;
+                if (mainObject.online) {
+                    mainObject.ajax('PUT', mainObject.url, () => {
+                        mainObject.restart();
+                    }, element);
+                } else {
+                    mainObject.restart();
+                }
             } else {
                 element[nameProperty] = input.text;
                 this.restart();
@@ -100,11 +185,10 @@ Student.prototype.eventList = function (nodeList, element, nameProperty, size, r
         }
     }
 }
-//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
 Student.prototype.statistics = function () {
-    let array = this.students.slice(0),
-        courses = [];
-    //Выделить все имеющиеся курсы----------------------
+    let array = this.students.slice(0);
+    let courses = [];
     for (let i = 0; i < array.length; i++) {
         courses.push(array[i].course);
         for (let j = i + 1; j < array.length; j++) {
@@ -114,7 +198,6 @@ Student.prototype.statistics = function () {
             }
         }
     }
-    //Отсортировать------------------------------------
     for (let i = 0; i < courses.length - 1; i++) {
         for (let j = i + 1; j < courses.length; j++) {
             if (courses[i] > courses[j]) {
@@ -124,17 +207,16 @@ Student.prototype.statistics = function () {
             }
         }
     }
-    //массив студентов по курсам-----------------------
     let arrayEstimates = [],//Средняя оценка. ["1курс", ...]
         arrayActive = [], //Неактивные студенты. ["первый курс", ...]
         arrayStud = this.students.slice(0);
     let noActiveAll = 0;
     for (let i = 0; i < courses.length; i++) {
-        arrayEstimates[i] = 0,
-            arrayActive[i] = 0;
+        arrayEstimates[i] = 0;
+        arrayActive[i] = 0;
         let count = 0;
         for (let j = 0; j < arrayStud.length; j++) {
-            if (arrayStud[j].course == courses[i] && !arrayStud[j].active) {
+            if (arrayStud[j].course == courses[i] && !arrayStud[j].is_active) {
                 arrayActive[i]++;
                 noActiveAll++;
             }
@@ -167,39 +249,46 @@ Student.prototype.statistics = function () {
     all.innerHTML = "&nbsp;&nbsp;Всего неактивных студентов:" + noActiveAll + '&nbsp;&nbsp;';
     all.style.cssText = 'background-color: #fff; color: #000;';
 }
-//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
 Student.prototype.listOfStudents = function () {
     if (this.students.length == 0) {
         this.listContainer.innerHTML = "нет ниодного студента.";
         return;
     }
+    let arrayID = [];
+    for (let i of this.students) {
+        arrayID.push(i.id);
+    }
+    let mainObject = this;
     this.listContainer.innerHTML = '';
     let result = [];
     for (let i = 0; i < this.students.length; i++) {
-
         result[i] = document.createElement('div');
         result[i].className = 'customClass';
-
-//Кнопка---------------------------------------------------------------------------------------------------
         result[i].appendChild(document.createElement("input")).type = 'button';
         result[i].childNodes[0].value = 'X';
-
         result[i].childNodes[0].onclick = () => {
-            this.students.splice(i, 1);
-
-            this.listContainer.innerHTML = '';
-            this.restart();
-            return;
+            if (this.online) {
+                mainObject.ajax("DELETE", this.url + this.students[i].id + '/', () => {
+                    mainObject.students.splice(i, 1);
+                    mainObject.listContainer.innerHTML = '';
+                    mainObject.restart();
+                });
+            } else {
+                mainObject.students.splice(i, 1);
+                mainObject.listContainer.innerHTML = '';
+                mainObject.restart();
+            }
         }
-//Данные студента и события формы ввода-------------------------------------------------------------------
-        let surName = document.createElement('span'),
-            course = document.createElement('span'),
-            estimate = document.createElement('span'),
-            active = document.createElement('input'),
-            email = document.createElement('span');
+        let surName = document.createElement('span');
+        let course = document.createElement('span');
+        let estimate = document.createElement('span');
+        let active = document.createElement('input');
+        let email = document.createElement('span');
+        let id = document.createElement('span');
 
         active.type = 'checkbox';
-        active.checked = this.students[i].active;
+        active.checked = this.students[i].is_active;
 
         if (this.students[i].estimate <= 3) {
             surName.style.cssText = 'color: #f00';
@@ -214,10 +303,9 @@ Student.prototype.listOfStudents = function () {
             course.style.cssText = 'color: #090';
             estimate.style.cssText = 'color: #090';
         }
-
         result[i].appendChild(document.createTextNode('Ф.И.: '));
         result[i].appendChild(surName);
-        surName.innerHTML = this.students[i].name;
+        surName.innerHTML = this.students[i].first_name;
         result[i].appendChild(document.createElement('br'));
 
         result[i].appendChild(document.createTextNode('курс: '));
@@ -231,12 +319,11 @@ Student.prototype.listOfStudents = function () {
         result[i].appendChild(document.createTextNode(', активный'));
         result[i].appendChild(active);
 
-
         result[i].appendChild(document.createElement('br'));
 
         if (this.students[i].email != '') {
             result[i].appendChild(document.createElement('a'));
-            result[i].childNodes[11].innerHTML = 'email:'
+            result[i].childNodes[11].innerHTML = 'email:';
             result[i].childNodes[11].href = 'mailto:' + this.students[i].email;
             result[i].childNodes[11].style.cssText = 'color: #00f;';
             result[i].appendChild(email);
@@ -249,18 +336,20 @@ Student.prototype.listOfStudents = function () {
 
         result[i].appendChild(document.createElement('br'));
         result[i].appendChild(document.createElement('br'));
-
-        // Events>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-        this.eventList(result[i].childNodes[2], this.students[i], 'name', 27, / *[А-ЯЁ][а-яё]+ +[А-ЯЁ][а-яё]+ */);
+        this.eventList(result[i].childNodes[2], this.students[i], 'first_name', 27, / *[А-ЯЁ][а-яё]+ +[А-ЯЁ][а-яё]+ */);
         this.eventList(result[i].childNodes[5], this.students[i], 'course', 1, /^\b[1-5]{1}\b$/);
         this.eventList(result[i].childNodes[7], this.students[i], 'estimate', 1, /^\b[1-5]{1}\b$/);
         this.eventList(result[i].childNodes[12], this.students[i], 'email', 27, /^[A-Za-zА-ЯЁа-яё0-9\.]+@[A-Za-z0-9]+\.[A-Za-z]+$/);
-
         active.onchange = () => {
-            this.students[i].active = active.checked;
-            this.restart();
+            mainObject.students[i].is_active = active.checked;
+            if (this.online) {
+                mainObject.ajax('PUT', mainObject.url, (a) => {
+                    mainObject.restart();
+                }, mainObject.students[i]);
+            } else {
+                mainObject.restart();
+            }
         }
-        // Events<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
     }
     for (let i = 0; i < result.length; i++) {
         this.listContainer.appendChild(result[i]);
@@ -268,39 +357,39 @@ Student.prototype.listOfStudents = function () {
         this.listContainer.appendChild(drTeg);
     }
 }
-//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-
-{
-    //let students = [];
-    let stat = document.getElementById('statistic');
-    let container = document.querySelector('#listOfStudents');
-    let stud = new Student([], container, stat);
-
-    stud.restart();
-
+Student.prototype.createForm = function () {
     let studentForm = document.getElementById('formOfStudent');
+    let mainObject = this;
 
     studentForm.elements['add'].onclick = function () {
         let student = {};
+        student.first_name = this.form.elements['surnameName'].value;
+        student.estimate = this.form.elements['estimate'].value * 1;
+        student.course = this.form.elements['course'].value * 1;
+        student.is_active = this.form.elements['active'].checked;
+        student.email = this.form.elements['email'].value;
 
-        student.name = this.form.elements['surnameName'].value,
-            student.estimate = this.form.elements['estimate'].value * 1,
-            student.course = this.form.elements['course'].value * 1,
-            student.active = this.form.elements['active'].checked,
-            student.email = this.form.elements['email'].value;
+        let regName = / *[А-ЯЁA-Z][а-яёa-z]+ +[А-ЯЁA-Z][а-яёa-z]+ */;
+        let regEstimate = /^\b[1-5]{1}\b$/;
+        let regCourse = /^\b[1-5]{1}\b$/;
+        let regEmail = /^[A-Za-zА-ЯЁа-яё0-9\.]+@[A-Za-z0-9]+\.[A-Za-z]+$/;
 
-        let regName = / *[А-ЯЁ][а-яё]+ +[А-ЯЁ][а-яё]+ */,
-            regEstimate = /^\b[1-5]{1}\b$/,
-            regCourse = /^\b[1-5]{1}\b$/,
-            regEmail = /^[A-Za-zА-ЯЁа-яё0-9\.]+@[A-Za-z0-9]+\.[A-Za-z]+$/;
-
-        if (regName.test(student.name)) {
+        if (regName.test(student.first_name)) {
             if (regEmail.test(student.email)) {
                 if (regCourse.test(student.course)) {
                     if (regEstimate.test(student.estimate)) {
-                        stud.students.push(student);
-                        stud.restart();
+                        if (mainObject.online) {
+                            mainObject.ajax('POST', mainObject.url, (elem) => {
+                                student.id = elem.student.id;
+                                mainObject.students.push(student);
+                                mainObject.restart();
+                            }, student);
+                        } else {
+                            student.id = '';
+                            mainObject.students.push(student);
+                            mainObject.restart();
+                        }
                     } else {
                         alert('Некорректно задана, или не задана, оценка.');
                     }
@@ -314,4 +403,43 @@ Student.prototype.listOfStudents = function () {
             alert('Введите корректную фамилию, имя.');
         }
     }
+}
+
+Student.prototype.test = function () {
+    let stud = this;
+    document.getElementById('clear').onclick = function () {
+        let array = [];
+        stud.ajax('GET', stud.url, (abc) => {
+            array = abc.students;
+            for (let i = 0; i < array.length; i++) {
+                stud.ajax('DELETE', stud.url + array[i].id + '/', (a) => {
+                });
+            }
+        });
+    }
+    document.getElementById('viewing').onclick = function () {
+        stud.ajax('GET', stud.url, (abc) => {
+            console.clear();
+            console.log('\n\nSERVER\n');
+            console.log(abc.students);
+            console.log('\n\nObject\n');
+            console.log(stud.students);
+        });
+    }
+    document.getElementById('add').onclick = function () {
+        let array = stud.students;
+        for (let i of array) {
+            stud.ajax('POST', stud.url, (a) => {
+                i.id = a.student.id;
+            }, i);
+        }
+    }
+}
+
+{
+    let stat = document.getElementById('statistic');
+    let container = document.querySelector('#listOfStudents');
+    let stud = new Student([], container, stat, "https://evgeniychvertkov.com/api/student/");
+
+    stud.restart();
 }

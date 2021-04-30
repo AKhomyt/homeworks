@@ -20,7 +20,7 @@ body {
     margin: 17% 0 0 10px;
     position: fixed;
     text-align: justify;
-    display: inline-block;
+    display: block;
     padding: 20px;
     width: min-content;
     font: italic 16px Arial;

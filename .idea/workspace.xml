@@ -20,11 +20,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7e21fa03-d4fd-483d-b03f-aed0d5420887" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/html/9.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/9.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/phones.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/6.5-8.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/9.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/6.5-10.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/1/9.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/6.5-8.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/9 — копия.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/9.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/6.5-10.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/phones.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/8.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/8.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +38,13 @@
   </component>
   <component name="ComposerSettings">
     <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -44,6 +56,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -79,7 +92,17 @@
       <workItem from="1619537121270" duration="6033000" />
       <workItem from="1619543773630" duration="10000" />
       <workItem from="1619543808330" duration="6539000" />
-      <workItem from="1619599215699" duration="8861000" />
+      <workItem from="1619599215699" duration="14979000" />
+      <workItem from="1619618225156" duration="106000" />
+      <workItem from="1619618352949" duration="413000" />
+      <workItem from="1619618835695" duration="6863000" />
+      <workItem from="1619706854355" duration="5467000" />
+      <workItem from="1619712407353" duration="1707000" />
+      <workItem from="1619714234405" duration="8728000" />
+      <workItem from="1619723318979" duration="5467000" />
+      <workItem from="1619766917564" duration="22847000" />
+      <workItem from="1619794205297" duration="1169000" />
+      <workItem from="1619795457217" duration="23000" />
     </task>
     <servers />
   </component>
@@ -99,6 +122,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="551" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1619795258406">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="551" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1619795258406" />
     <state x="643" y="264" width="672" height="678" key="search.everywhere.popup" timestamp="1619607719490">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
