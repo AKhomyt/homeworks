@@ -48,10 +48,9 @@ class Student {
         this.statisticsContainer = statisticsContainer || {};
         this.online = online || true;
         this.firstStart = true;
-
     }
 
-    restart = function () {
+    restart() {
         for (let i = 0; i < this.students.length; i++) {
             if (typeof this.students[i].email == "undefined") {
                 this.students[i].email = '';
@@ -102,7 +101,7 @@ class Student {
         }
     }
 
-    ajax = function (method, url, callback, student) {
+    ajax(method, url, callback, student) {
         let xhr = new XMLHttpRequest();
         xhr.open(method, url, true);
         let offlineData = {
@@ -128,7 +127,7 @@ class Student {
         }
     }
 
-    serverUpdate = function () {
+    serverUpdate() {
         let local = JSON.parse(localStorage.getItem('students'));
         let mainObject = this;
         if (local.length >= 1) {
@@ -185,7 +184,7 @@ class Student {
         }
     }
 
-    eventList = function (nodeList, element, nameProperty, size, regularExpressions) {
+    eventList(nodeList, element, nameProperty, size, regularExpressions) {
         let mainObject = this;
         nodeList.onclick = () => {
             nodeList.onclick = null;
@@ -238,7 +237,7 @@ class Student {
         }
     }
 
-    statistics = function () {
+    statistics() {
         let array = this.students.slice(0);
         let courses = [];
         for (let i = 0; i < array.length; i++) {
@@ -302,7 +301,7 @@ class Student {
         all.style.cssText = 'background-color: #fff; color: #000;';
     }
 
-    listOfStudents = function () {
+    listOfStudents() {
         if (this.students.length == 0) {
             this.listContainer.innerHTML = "нет ниодного студента.";
             return;
@@ -410,7 +409,7 @@ class Student {
         }
     }
 
-    createForm = function () {
+    createForm() {
         let studentForm = document.getElementById('formOfStudent');
         let mainObject = this;
 
@@ -457,7 +456,7 @@ class Student {
         }
     }
 
-    test = function () {
+    test() {
         let stud = this;
         document.getElementById('clear').onclick = function () {
             let array = [];
