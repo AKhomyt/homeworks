@@ -32,6 +32,14 @@ body {
     border-radius: 25%;
 }
 
+#status {
+    color: yellow;
+    font-family: Dialog;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: bold;
+}
+
 .customClass:hover {
     background-color: rgba(238, 234, 226, 0.7);
     transition: background-color 100ms;

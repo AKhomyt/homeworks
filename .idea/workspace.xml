@@ -20,15 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7e21fa03-d4fd-483d-b03f-aed0d5420887" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/html/6.5-10c.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/6.5-8.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/9.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/6.5-10.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/1/9.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/6.5-8.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/9 — копия.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/9.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/6.5-10.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/phones.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/6.5-10.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/6.5-10.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/6.5-10.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/6.5-10.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/styles/8.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/8.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -60,7 +55,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/scripts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/styles" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -70,8 +65,9 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\РАЗНОЕ\MyPojects\homework\scripts" />
+      <recent name="D:\РАЗНОЕ\MyPojects\homework\styles" />
       <recent name="D:\РАЗНОЕ\MyPojects\homework\html" />
+      <recent name="D:\РАЗНОЕ\MyPojects\homework\scripts" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -103,6 +99,13 @@
       <workItem from="1619766917564" duration="22847000" />
       <workItem from="1619794205297" duration="1169000" />
       <workItem from="1619795457217" duration="23000" />
+      <workItem from="1619805820971" duration="190000" />
+      <workItem from="1619856126955" duration="135000" />
+      <workItem from="1619940758149" duration="5000" />
+      <workItem from="1620049231329" duration="14240000" />
+      <workItem from="1620063842449" duration="617000" />
+      <workItem from="1620064688416" duration="589000" />
+      <workItem from="1620065415032" duration="280000" />
     </task>
     <servers />
   </component>
